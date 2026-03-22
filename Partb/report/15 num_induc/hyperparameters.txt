@@ -1,0 +1,12 @@
+num_inducing        = 15
+batch_size (initial)= 32
+batch_size (loop)   = 64
+num_epochs (initial)= 300
+num_epochs (loop)   = 100
+lr (initial)        = 0.01
+lr (loop)           = 0.005
+n_candidates        = 2000
+n_samples (MC ELL)  = 20
+seed                = 7
+rounds              = 50
+pairs per round     = 25
