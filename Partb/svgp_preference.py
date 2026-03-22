@@ -82,11 +82,9 @@ def svgp_ell_preference(params, X_i_batch, X_j_batch, y_ij_batch, N_total, rng_k
     Z   = params["inducing_inputs"]   # (M, 2)
     m   = params["variational_mean"]  # (M,)
     M   = Z.shape[0]
-
     L_v  = build_var_chol(params["var_chol_log_diag"], params["var_chol_lower"], M)
     K_zz = rbf_kernel(Z, Z, ls, var)
     L_zz = stable_cholesky(K_zz)
-
     B_size = X_i_batch.shape[0]
 
     # Stack both halves to run the kernel and solve once
@@ -108,7 +106,7 @@ def svgp_ell_preference(params, X_i_batch, X_j_batch, y_ij_batch, N_total, rng_k
     k_ii = rbf_kernel(X_i_batch, X_i_batch, ls, var, diag=True)               # (B,)
     k_jj = rbf_kernel(X_j_batch, X_j_batch, ls, var, diag=True)               # (B,)
     k_ij = rbf_kernel(X_i_batch, X_j_batch, ls, var, diag=True)               # (B,)
-
+    
     Sigma_ii = k_ii - jnp.sum(alpha_i ** 2, axis=0) + jnp.sum(B_i ** 2, axis=0)       # (B,)
     Sigma_jj = k_jj - jnp.sum(alpha_j ** 2, axis=0) + jnp.sum(B_j ** 2, axis=0)       # (B,)
     Sigma_ij = k_ij - jnp.sum(alpha_i * alpha_j, axis=0) + jnp.sum(B_i * B_j, axis=0) # (B,)
