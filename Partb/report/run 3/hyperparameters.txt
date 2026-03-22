@@ -1,4 +1,4 @@
-Run 3 hyperparameters
+Run 3 hyperparameters  [USED FOR REPORT]
 num_inducing        = 15
 batch_size (initial)= 32
 batch_size (loop)   = 64

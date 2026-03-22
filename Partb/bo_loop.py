@@ -103,7 +103,7 @@ def main():
         y_ij = jnp.concatenate([y_ij, new_yij])
 
         params, rng_key = train_preference_gp(
-            params, X_i, X_j, y_ij, rng_key, num_epochs=20, lr=0.005, batch_size=64
+            params, X_i, X_j, y_ij, rng_key, num_epochs=100, lr=0.005, batch_size=64
         )
 
         print(f"  Round {round_idx + 1}/50  |  total pairs: {y_ij.shape[0]}  |  cand1=[{float(cand1[0]):.2f}, {float(cand1[1]):.2f}]  cand2=[{float(cand2[0]):.2f}, {float(cand2[1]):.2f}]")
