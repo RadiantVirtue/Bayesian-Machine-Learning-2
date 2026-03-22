@@ -1,9 +1,9 @@
-Run 1 hyperparameters
+Run 3 hyperparameters
 num_inducing        = 15
 batch_size (initial)= 32
 batch_size (loop)   = 64
 num_epochs (initial)= 300
-num_epochs (loop)   = 20
+num_epochs (loop)   = 100
 lr (initial)        = 0.01
 lr (loop)           = 0.005
 n_candidates        = 2000

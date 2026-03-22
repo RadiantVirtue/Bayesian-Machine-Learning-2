@@ -1,3 +1,4 @@
+Run 2 hyperparameters
 num_inducing        = 25
 batch_size (initial)= 25
 batch_size (loop)   = 64
